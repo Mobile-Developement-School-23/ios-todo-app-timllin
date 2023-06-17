@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct FileCache{
+final class FileCache{
     private(set) var toDoItemDict = [String: TodoItem]()
     
-    public mutating func add(item: TodoItem) {
+    public func add(item: TodoItem) {
         if !toDoItemDict.keys.contains(item.getId()){
             toDoItemDict[item.getId()] = item
         } else {
@@ -18,7 +18,7 @@ struct FileCache{
         }
     }
     
-    public mutating func delete(item: TodoItem) {
+    public func delete(item: TodoItem) {
         if toDoItemDict.keys.contains(item.getId()){
             toDoItemDict.removeValue(forKey: item.getId())
         }
@@ -38,7 +38,7 @@ struct FileCache{
         
     }
     
-    public mutating func loadJSON(fileName: String) {
+    public func loadJSON(fileName: String) {
         do {
             let fileURL = try FileManager.default
                 .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
@@ -74,7 +74,7 @@ extension FileCache{
         }
     }
     
-    public mutating func loadCVS(fileName: String) {
+    public func loadCVS(fileName: String) {
         do {
             let fileURL = try FileManager.default
                 .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
