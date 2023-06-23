@@ -15,8 +15,9 @@ public struct TodoItem{
     private let flag: Bool
     private let creationDate: Date
     private let changeDate: Date?
+    private let hexCode: String?
     
-    init(id: String = UUID().uuidString, text: String, importanceType: Importance, deadline: Date? = nil, flag: Bool, creationDate: Date = Date(), changeDate: Date? = nil) {
+    init(id: String = UUID().uuidString, text: String, importanceType: Importance, deadline: Date? = nil, flag: Bool = false, creationDate: Date = Date(), changeDate: Date? = nil, hexCode: String? = nil) {
         self.id = id
         self.text = text
         self.importanceType = importanceType
@@ -24,6 +25,7 @@ public struct TodoItem{
         self.flag = flag
         self.creationDate = creationDate
         self.changeDate = changeDate
+        self.hexCode = hexCode
     }
     
     enum Importance: String {
@@ -57,6 +59,7 @@ extension TodoItem{
         let deadline = deadlineTimeStamp.map { Date(timeIntervalSince1970: $0) }
         let changeDate =  changeDateTimeStamp.map { Date(timeIntervalSince1970: $0) }
         
+        let hexCode = jsonDict["hexCode"] as? String
         
         let toDoItem = TodoItem(id: id,
                                 text: text,
@@ -64,7 +67,8 @@ extension TodoItem{
                                 deadline: deadline,
                                 flag: flag,
                                 creationDate: creationDate,
-                                changeDate: changeDate)
+                                changeDate: changeDate,
+                                hexCode: hexCode)
         return toDoItem
     }
     
@@ -91,6 +95,10 @@ extension TodoItem{
             dict["changeDate"] = changeDate.timeIntervalSince1970
         }
         
+        if let hexCode = hexCode {
+            dict["hexCode"] = hexCode
+        }
+        
         return dict
     }
 }
@@ -103,12 +111,13 @@ extension TodoItem{
                                               "deadline": "Double",
                                               "flag": "Bool",
                                               "creationDate": "Double",
-                                              "changeDate" : "Double"]
+                                              "changeDate" : "Double",
+                                              "hexCode": "String"]
         
-        let headerCSV = ["id", "text", "importanceType", "deadline", "flag", "creationDate", "changeDate"]
+        let headerCSV = ["id", "text", "importanceType", "deadline", "flag", "creationDate", "changeDate", "hexCode"]
         
         let itemList = csv.components(separatedBy: [","])
-        if itemList.count != 7{
+        if itemList.count != 8{
             return nil
         }
                 
@@ -162,7 +171,12 @@ extension TodoItem{
         if let changeDate = changeDate {
             csvChangeDate = String(changeDate.timeIntervalSince1970)
         }
-        let itemString = "\(csvId),\(csvText),\(csvImportanceType),\(csvDeadline),\(csvflag),\(csvCreationDate),\(csvChangeDate)\n"
+        var csvHexCode = ""
+        if let hexCode = hexCode {
+            csvHexCode = hexCode
+        }
+        
+        let itemString = "\(csvId),\(csvText),\(csvImportanceType),\(csvDeadline),\(csvflag),\(csvCreationDate),\(csvChangeDate),\(csvHexCode)\n"
         return itemString
     }
 }
@@ -195,5 +209,10 @@ extension TodoItem{
     public func getChangeDate() -> Date? {
         return changeDate
     }
+    
+    public func getHexCode() -> String? {
+        return hexCode
+    }
+    
 }
 
