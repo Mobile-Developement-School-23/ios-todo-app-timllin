@@ -20,10 +20,10 @@ final class toDoList__2023Tests: XCTestCase {
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         fileCache = FileCache()
-        item1 = TodoItem(id: "testId", text: "testText", importanceType: .reqular, flag: true)
+        item1 = TodoItem(id: "testId", text: "testText", importanceType: .reqular, flag: true, hexCode: "boba")
         item2 = TodoItem(text: "testText", importanceType: .important, deadline: Date(timeIntervalSince1970: 1686836125), flag: true, creationDate: Date(timeIntervalSince1970: 77777), changeDate: Date(timeIntervalSince1970: 999999))
-        fileNameJSON = "test.json"
-        fileNameCVS = "test.cvs"
+        fileNameJSON = "test3.json"
+        fileNameCVS = "test3.cvs"
     }
 
     override func tearDownWithError() throws {
@@ -47,8 +47,7 @@ final class toDoList__2023Tests: XCTestCase {
         XCTAssertEqual(true, item2.getFlag())
         XCTAssertEqual(Date(timeIntervalSince1970: 77777), item2.getCreationDate())
         XCTAssertEqual(Date(timeIntervalSince1970: 999999), item2.getChangeDate())
-        
-        
+                
     }
     
     func testTodoItemParseJSON() throws {

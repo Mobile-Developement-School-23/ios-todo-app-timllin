@@ -35,7 +35,6 @@ final class FileCache{
         } catch {
             print(error)
         }
-        
     }
     
     public func loadJSON(fileName: String) {
@@ -59,7 +58,7 @@ final class FileCache{
 
 extension FileCache{
     public func saveCVS(fileName: String) {
-        var csvData = "id,text,importanceType,deadline,flag,creationDate,changeDate\n"
+        var csvData = "id,text,importanceType,deadline,flag,creationDate,changeDate,hexCode\n"
         let toDoItemList = toDoItemDict.map({$0.value}).map({$0.csv})
         for itemString in toDoItemList{
             csvData.append(itemString)
