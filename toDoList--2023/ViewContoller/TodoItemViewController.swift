@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  toDoList--2023
 //
-//  
+//
 //
 
 import UIKit
@@ -471,6 +471,7 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
     private func loadTodoItem(item: TodoItem?) {
         guard let item = item else { return }
         subview1.text = item.getText()
+        updateSubviewHeight(subview1)
         
         switch item.getImportanceTypeString() {
         case "unimportant":
@@ -516,13 +517,13 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
         //    view.frame.size.height -= keyboardSize.height
         //}
         view.frame.size.height -= view.keyboardLayoutGuide.layoutFrame.size.height
-        //view.layoutIfNeeded()
+        view.layoutSubviews()
        
     }
     
     @objc func keyboardWillHide(_ notification: NSNotification) {
         view.frame.size.height += view.keyboardLayoutGuide.layoutFrame.size.height
-        //view.layoutIfNeeded()
+        view.layoutSubviews()
     }
     
     @objc func registerForKeyboardNotifications() {
@@ -535,7 +536,7 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
         present(nextViewController, animated: true)
     }
     
-    @objc private func handleMyNotification(_ sender: Notification) {
+    @objc func handleMyNotification(_ sender: Notification) {
         guard let userInfo = sender.userInfo,
            let hex = userInfo["key"] as? String,
            let color = userInfo["color"] as? UIColor else { return }
@@ -552,6 +553,7 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
         setupScrollView()
         loadTodoItem(item: toDoItem)
         registerForKeyboardNotifications()
+        hideKeyboardWhenTappedAround()
     
         navigationBarBackButton.addTarget(self, action: #selector(cancellButtonValueChanged(_ :)), for: .touchUpInside)
         navigationBarSaveButton.addTarget(self, action: #selector(saveButtonValueChanged(_ :)), for: .touchUpInside)
@@ -585,3 +587,14 @@ extension UIViewController{
     }
 }
 
+extension TodoItemViewController{
+    private func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        subview1.endEditing(true)
+    }
+}
