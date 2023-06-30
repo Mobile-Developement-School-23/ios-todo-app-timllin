@@ -4,6 +4,7 @@
 //
 //
 //
+// swiftlint:disable all
 
 import UIKit
 
@@ -17,14 +18,13 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
     
     //private lazy var kkHeight: CGFloat? = nil
     private lazy var hexColor: UIColor? = nil
-    
-    
+
     var fileCache = FileCache()
     
     private let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru_RU")
-        dateFormatter.dateFormat = "dd MMMM y"
+        dateFormatter.dateFormat = "d MMMM y"
         return dateFormatter
     }()
     
@@ -82,10 +82,6 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
         view.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17.0)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.heightAnchor.constraint(equalToConstant: 22).isActive = true
-//        if view.titleColor(for: .normal) == UIColor(named: "labelDisable") {
-//            print("A")
-//            view.isEnabled = false
-//        }
         view.isEnabled = false
         return view
     }()
@@ -94,13 +90,12 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
         let view = UITextView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.heightAnchor.constraint(equalToConstant: 120).isActive = true
-        view.textContainerInset = UIEdgeInsets(top: 17, left: 16, bottom: 12, right: 16)
+        view.textContainerInset = UIEdgeInsets(top: 16, left: 12, bottom: 12, right: 12)
         view.layer.cornerRadius = 16
         view.backgroundColor = UIColor(named: "backSecondary")
         view.textColor = UIColor(named: "labelDisable")
         view.font = UIFont.systemFont(ofSize: 17.0)
         view.text = "Что надо сделать?"
-        view.keyboardType = .default
         return view
     }()
     
@@ -256,7 +251,7 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor(named: "labelPrimary") //.clear //UIColor(named: "labelPrimary")
-        view.layer.cornerRadius = 16
+        view.layer.cornerRadius = 12
         view.layer.borderWidth = 1
         view.widthAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1).isActive = true
         return view
@@ -264,6 +259,7 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
     
     
     private func setupScrollView() {
+        view.backgroundColor = UIColor(named: "backPrimary")
         let margins = view.layoutMarginsGuide
         view.addSubview(scrollView)
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -289,6 +285,7 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
     }
     
     private func configureContainerView() {
+        subview1.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = false
         scrollStackView.addArrangedSubview(subview1)
         configureSubview2()
         scrollStackView.addArrangedSubview(subview2)
@@ -373,9 +370,8 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
                 toDoItem = TodoItem(text: itemText, importanceType: itemImportanceType, deadline: itemDeadLine, hexCode: itemHexCode)
             }
             guard let item = toDoItem else { return }
-            fileCache.add(item: item)
-            fileCache.saveJSON(fileName: "testApp.json")
-            //print(fileCache.toDoItemDict)
+            NotificationCenter.default.post(name: .dataChanged, object: nil, userInfo: ["flag": "add","item": item])
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -396,7 +392,6 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
             subview2Calendar.setDate(tommorow, animated: true)
         } else {
             separatorCalendar.isHidden = !value
-            //subview2Calendar.isHidden = !value
             subview2Calendar.alpha = 1.0
             UIView.animate(withDuration: 0.3, delay: 0, options: .layoutSubviews, animations: {
                 self.subview2Calendar.alpha = 0
@@ -417,7 +412,6 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
     
     @objc func buttonDateTapped() {
         separatorCalendar.isHidden = !separatorCalendar.isHidden
-        //subview2Calendar.isHidden = !subview2Calendar.isHidden
         if subview2Calendar.isHidden{
             subview2Calendar.alpha = 0.0
             subview2Calendar.isHidden = false
@@ -437,10 +431,9 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
     @objc func subview3ButtonValueChanged(_ button: UIButton) {
         if button.isEnabled{
             guard let item = toDoItem else { return }
-            fileCache.delete(item: item)
             toDoItem = nil
-            fileCache.saveJSON(fileName: "testApp.json")
-            //print(fileCache.toDoItemDict)
+            NotificationCenter.default.post(name: .dataChanged, object: nil, userInfo: ["flag": "delete", "item": item])
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -511,18 +504,22 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
         toDoItem = item
     }
     
+    public func setFileCache(item: FileCache){
+        fileCache = item
+    }
+    
     @objc func keyboardWillShow(_ notification: NSNotification) {
-        //scrollView.layer.borderWidth = 5
-        //if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-        //    view.frame.size.height -= keyboardSize.height
-        //}
-        view.frame.size.height -= view.keyboardLayoutGuide.layoutFrame.size.height
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height-view.safeAreaInsets.bottom, right: 0)
+        }
+        //view.frame.size.height -= view.keyboardLayoutGuide.layoutFrame.size.height
         view.layoutSubviews()
        
     }
     
     @objc func keyboardWillHide(_ notification: NSNotification) {
-        view.frame.size.height += view.keyboardLayoutGuide.layoutFrame.size.height
+        //view.frame.size.height += view.keyboardLayoutGuide.layoutFrame.size.height
+        view.layoutMargins = UIEdgeInsets.zero
         view.layoutSubviews()
     }
     
@@ -566,7 +563,8 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
         
         colorWeel.addTarget(self, action: #selector(colorWellValueChanged(_ :)), for: .touchUpInside)
         NotificationCenter.default.addObserver(self, selector: #selector(handleMyNotification(_ :)), name: .colorHasChosen, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: UIDevice.orientationDidChangeNotification, object: nil)
+       
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -574,6 +572,9 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: .colorHasChosen, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .dataChanged, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
+        
     }
 
 }
@@ -596,5 +597,16 @@ extension TodoItemViewController{
     
     @objc func dismissKeyboard() {
         subview1.endEditing(true)
+    }
+    
+    @objc func orientationDidChange() {
+        if UIDevice.current.orientation.isLandscape {
+            subview2.isHidden = true
+            subview3.isHidden = true
+        } else {
+            subview2.isHidden = false
+            subview3.isHidden = false           
+        }
+        subview1.layoutIfNeeded()
     }
 }
