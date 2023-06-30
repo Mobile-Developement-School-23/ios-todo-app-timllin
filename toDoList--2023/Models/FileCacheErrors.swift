@@ -7,7 +7,10 @@
 
 import Foundation
 
+
 enum FileCacheErrors: Error {
     case cannotFindFile
     case unparsableData
 }
+
+

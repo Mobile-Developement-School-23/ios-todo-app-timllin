@@ -4,7 +4,6 @@
 //
 //  Created by Тимур Калимуллин on 10.06.2023.
 //
-// swiftlint:disable all
 
 import XCTest
 @testable import toDoList__2023

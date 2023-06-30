@@ -4,14 +4,12 @@
 //
 //
 //
-// swiftlint:disable all
-
 
 import Foundation
 
 final class FileCache{
     private(set) var toDoItemDict = [String: TodoItem]()
-
+    
     public func add(item: TodoItem) {
         if !toDoItemDict.keys.contains(item.getId()){
             toDoItemDict[item.getId()] = item
@@ -19,13 +17,13 @@ final class FileCache{
             toDoItemDict.updateValue(item, forKey: item.getId())
         }
     }
-
+    
     public func delete(item: TodoItem) {
         if toDoItemDict.keys.contains(item.getId()){
             toDoItemDict.removeValue(forKey: item.getId())
         }
     }
-
+    
     public func saveJSON(fileName: String) {
         let toDoItemList = toDoItemDict.map({$0.value}).map({$0.json})
         do {
@@ -38,7 +36,7 @@ final class FileCache{
             print(error)
         }
     }
-
+    
     public func loadJSON(fileName: String) {
         do {
             let fileURL = try FileManager.default
@@ -74,21 +72,21 @@ extension FileCache{
             print(error)
         }
     }
-
+    
     public func loadCVS(fileName: String) {
         do {
             let fileURL = try FileManager.default
                 .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
                 .appendingPathComponent(fileName)
             let dataString = try String(contentsOfFile: fileURL.path)
-
+            
             let data: [String] = dataString.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: "\n")
-
+            
             guard let headerCSV = data.first?.components(separatedBy: [","]) else {return }
             if headerCSV != ["id", "text", "importanceType", "deadline", "flag", "creationDate", "changeDate"]{
                 return
             }
-
+            
             for i in 1..<data.count{
                 if let newItem = TodoItem.parse(csv: data[i]){
                     toDoItemDict[newItem.getId()] = newItem

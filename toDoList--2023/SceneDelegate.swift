@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
-        let fileCacheController = MainViewController()
+        let fileCacheController = FileCacheViewController()
         let navController = UINavigationController(rootViewController: fileCacheController)
         window?.rootViewController = navController
     }
@@ -50,4 +50,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+
+
 }
+
