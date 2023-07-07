@@ -6,11 +6,10 @@
 //
 
 import UIKit
-import Models
 
 class MainViewController: UIViewController {
     private lazy var fileCache = FileCache()
-    private lazy var loggerMainVC = Logger()
+    private lazy var networkWorker = DefaultNetworkingService()
     private var currentCell: ItemTableViewCell?
     private let transitionDelegate: UIViewControllerTransitioningDelegate = TransitioninDelegate()
     private var keys: [String] {
@@ -98,13 +97,16 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        getDataFromNetwork()
         newItemButton.addTarget(self, action: #selector(newItemButtonValue(_ :)), for: .touchUpInside)
         completeBar.button.addTarget(self, action: #selector(showHiddenButtonTapped(_ :)), for: .touchUpInside)
         NotificationCenter.default.addObserver(self, selector: #selector(handleMyNotification(_ :)), name: .dataChanged, object: nil)
+        // NotificationCenter.default.addObserver(self, selector: #selector(hadleDirtyNetwork(_ :)), name: .idDirtyNetwork, object: nil)
     }
 
     deinit {
         NotificationCenter.default.removeObserver(self, name: .dataChanged, object: nil)
+        // NotificationCenter.default.removeObserver(self, name: .idDirtyNetwork, object: nil)
     }
 }
 
@@ -143,7 +145,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        loggerMainVC.logI("Cell with \(indexPath) location has been touched")
+
         let todoItemViewController = TodoItemViewController()
 
         if flag {
@@ -268,11 +270,23 @@ extension MainViewController {
               let item = userInfo["item"] as? TodoItem else { return }
         if operationFlag == "add"{
             fileCache.add(item: item)
+            postItemNetwork(with: item)
+        } else if operationFlag == "change"{
+            fileCache.add(item: item)
+            putItemNetwork(with: item)
         } else if operationFlag == "delete" {
             fileCache.delete(item: item)
+            deleteItemNetwork(with: item)
         }
         tableView.reloadData()
         reloadAndUpdateData()
+    }
+
+    @objc func hadleDirtyNetwork(_ sender: Notification) {
+        patchDataNetwork(with: fileCache.toDoItemDict.map { $0.value })
+        networkWorker.setIsDirty(false)
+        reloadAndUpdateData()
+
     }
 }
 
@@ -294,6 +308,7 @@ extension MainViewController {
                                              changeDate: item.getChangeDate(),
                                              hexCode: item.getHexCode())
             fileCache.add(item: newItem)
+            putItemNetwork(with: newItem)
             tableView.reloadData()
             reloadAndUpdateData()
         }
@@ -308,6 +323,7 @@ extension MainViewController {
         }
         if let item = fileCache.toDoItemDict[currentKeys[indexPath.row]] {
             fileCache.delete(item: item)
+            deleteItemNetwork(with: item)
             tableView.reloadData()
             reloadAndUpdateData()
         }
@@ -327,5 +343,57 @@ extension MainViewController {
 extension MainViewController {
     public func getCell() -> ItemTableViewCell? {
         return currentCell
+    }
+
+    private func getDataFromNetwork() {
+        Task {
+            let items = try await networkWorker.getDataFromServer()
+            fileCache.deleteAllItems()
+            fileCache.updateAllItems(with: items)
+            reloadAndUpdateData()
+            tableView.reloadData()
+        }
+    }
+
+    private func patchDataNetwork(with items: [TodoItem]) {
+        Task {
+            let items = try await networkWorker.updateDataOnServer(items: items)
+            fileCache.deleteAllItems()
+            fileCache.updateAllItems(with: items)
+        }
+    }
+
+    private func postItemNetwork(with item: TodoItem) {
+        if networkWorker.getIsDirty() {
+            dirtyNetwork()
+        }
+        Task {
+            try await networkWorker.postItem(with: item)
+        }
+    }
+
+    private func putItemNetwork(with item: TodoItem) {
+        if networkWorker.getIsDirty() {
+            dirtyNetwork()
+        }
+        Task {
+            try await networkWorker.putItem(with: item)
+        }
+    }
+
+    private func deleteItemNetwork(with item: TodoItem) {
+        if networkWorker.getIsDirty() {
+            dirtyNetwork()
+        }
+        Task {
+            try await networkWorker.deleteItem(with: item)
+        }
+    }
+
+    private func dirtyNetwork() {
+        patchDataNetwork(with: fileCache.toDoItemDict.map { $0.value })
+        networkWorker.setIsDirty(false)
+        reloadAndUpdateData()
+
     }
 }

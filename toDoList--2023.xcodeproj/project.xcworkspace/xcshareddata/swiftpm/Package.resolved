@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "models",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/timllin/Models",
+      "state" : {
+        "branch" : "main",
+        "revision" : "504fde20ef89042f577d6eae50f4b753915bd1ec"
+      }
+    },
+    {
       "identity" : "swift-log",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-log.git",

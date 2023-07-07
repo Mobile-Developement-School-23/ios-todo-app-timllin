@@ -39,7 +39,7 @@ final class TransitionAnimation: NSObject, UIViewControllerAnimatedTransitioning
 
         UIView.animate(withDuration: duration, animations: {
                     snapshot.frame = (transitionContext.finalFrame(for: toViewController))
-                }, completion: { success in
+                }, completion: { _ in
                     toViewController.view.isHidden = false
                     snapshot.removeFromSuperview()
                     transitionContext.completeTransition(true)
