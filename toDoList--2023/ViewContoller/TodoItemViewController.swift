@@ -363,14 +363,16 @@ class TodoItemViewController: UIViewController, UITextViewDelegate {
         if button.isEnabled{
             collateDataItem()
             guard let itemText = itemText, let itemImportanceType = itemImportanceType else { return }
-            
+            var flag: String = ""
             if let item = toDoItem {
                 toDoItem = TodoItem(id: item.getId(), text: itemText, importanceType: itemImportanceType, deadline: itemDeadLine, flag: item.getFlag(), creationDate: item.getCreationDate(), changeDate: Date(), hexCode: itemHexCode)
+                flag = "change"
             } else {
                 toDoItem = TodoItem(text: itemText, importanceType: itemImportanceType, deadline: itemDeadLine, hexCode: itemHexCode)
+                flag = "add"
             }
             guard let item = toDoItem else { return }
-            NotificationCenter.default.post(name: .dataChanged, object: nil, userInfo: ["flag": "add","item": item])
+            NotificationCenter.default.post(name: .dataChanged, object: nil, userInfo: ["flag": flag, "item": item])
             self.dismiss(animated: true, completion: nil)
         }
     }

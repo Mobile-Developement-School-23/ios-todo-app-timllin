@@ -10,7 +10,6 @@
 		4652726E15D1EC07CC58D63A /* Pods_toDoList__2023_toDoList__2023UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 864F56BCC1FAB3943EB3EF44 /* Pods_toDoList__2023_toDoList__2023UITests.framework */; };
 		5A3374233087B0ABA5F49489 /* Pods_toDoList__2023Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817E435DEA9C2EE025D05DD9 /* Pods_toDoList__2023Tests.framework */; };
 		CA19BA3A2A4DBE1A0092469A /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA19BA392A4DBE1A0092469A /* CustomTableView.swift */; };
-		CA19BA412A4E41D80092469A /* CocoaLumberjackSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA19BA402A4E41D80092469A /* CocoaLumberjackSwift */; };
 		CA19BA452A4ED5B40092469A /* TransitioninDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA19BA442A4ED5B40092469A /* TransitioninDelegate.swift */; };
 		CA19BA472A4ED8E00092469A /* TransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA19BA462A4ED8E00092469A /* TransitionAnimation.swift */; };
 		CA4264372A385BB7000631EE /* FileCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4264362A385BB7000631EE /* FileCache.swift */; };
@@ -30,7 +29,12 @@
 		CA6D39122A49D21400B11DD9 /* CompleteBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6D39112A49D21400B11DD9 /* CompleteBarView.swift */; };
 		CA6D39142A4A1FE500B11DD9 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6D39132A4A1FE500B11DD9 /* ItemTableViewCell.swift */; };
 		CA6D39162A4B0FF100B11DD9 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6D39152A4B0FF100B11DD9 /* UILabel.swift */; };
-		CACD94A22A4F75E000DAB123 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = CACD94A12A4F75E000DAB123 /* Models */; };
+		CACD94A42A540ABB00DAB123 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD94A32A540ABB00DAB123 /* URLSession.swift */; };
+		CACD94A72A5462F500DAB123 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD94A62A5462F500DAB123 /* NetworkingService.swift */; };
+		CACD94A92A5465E200DAB123 /* DefaultNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD94A82A5465E200DAB123 /* DefaultNetworkingService.swift */; };
+		CACD94AB2A56B74600DAB123 /* ItemsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD94AA2A56B74600DAB123 /* ItemsDTO.swift */; };
+		CACD94AE2A56D07300DAB123 /* ToDoItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD94AD2A56D07300DAB123 /* ToDoItemDTO.swift */; };
+		CACD94B02A56FA2400DAB123 /* ItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD94AF2A56FA2300DAB123 /* ItemDTO.swift */; };
 		CACD97F92A4232A100BB6D7E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD97F82A4232A100BB6D7E /* Notification.swift */; };
 		CACD97FD2A4318B500BB6D7E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACD97FC2A4318B500BB6D7E /* Colors.xcassets */; };
 		CACD97FF2A4482A600BB6D7E /* ColorPalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD97FE2A4482A600BB6D7E /* ColorPalletView.swift */; };
@@ -88,6 +92,12 @@
 		CA6D39112A49D21400B11DD9 /* CompleteBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteBarView.swift; sourceTree = "<group>"; };
 		CA6D39132A4A1FE500B11DD9 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		CA6D39152A4B0FF100B11DD9 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		CACD94A32A540ABB00DAB123 /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
+		CACD94A62A5462F500DAB123 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		CACD94A82A5465E200DAB123 /* DefaultNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkingService.swift; sourceTree = "<group>"; };
+		CACD94AA2A56B74600DAB123 /* ItemsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsDTO.swift; sourceTree = "<group>"; };
+		CACD94AD2A56D07300DAB123 /* ToDoItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemDTO.swift; sourceTree = "<group>"; };
+		CACD94AF2A56FA2300DAB123 /* ItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDTO.swift; sourceTree = "<group>"; };
 		CACD97F82A4232A100BB6D7E /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		CACD97FC2A4318B500BB6D7E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		CACD97FE2A4482A600BB6D7E /* ColorPalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalletView.swift; sourceTree = "<group>"; };
@@ -103,8 +113,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CACD94A22A4F75E000DAB123 /* Models in Frameworks */,
-				CA19BA412A4E41D80092469A /* CocoaLumberjackSwift in Frameworks */,
 				E8209C964C429636DA3D25D1 /* Pods_toDoList__2023.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +162,7 @@
 		CA19BA3D2A4E403B0092469A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CACD94A52A5462DC00DAB123 /* Services */,
 				CA19BA482A4EE1490092469A /* Assets */,
 				CA19BA442A4ED5B40092469A /* TransitioninDelegate.swift */,
 				CA19BA462A4ED8E00092469A /* TransitionAnimation.swift */,
@@ -247,6 +256,26 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CACD94A52A5462DC00DAB123 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CACD94A62A5462F500DAB123 /* NetworkingService.swift */,
+				CACD94A82A5465E200DAB123 /* DefaultNetworkingService.swift */,
+				CACD94AC2A56D02F00DAB123 /* DTO */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CACD94AC2A56D02F00DAB123 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				CACD94AA2A56B74600DAB123 /* ItemsDTO.swift */,
+				CACD94AD2A56D07300DAB123 /* ToDoItemDTO.swift */,
+				CACD94AF2A56FA2300DAB123 /* ItemDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
 		CACD97F72A42324600BB6D7E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +283,7 @@
 				CACD98022A44FAA400BB6D7E /* UIColor.swift */,
 				CA6D39152A4B0FF100B11DD9 /* UILabel.swift */,
 				CA19BA392A4DBE1A0092469A /* CustomTableView.swift */,
+				CACD94A32A540ABB00DAB123 /* URLSession.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -288,8 +318,6 @@
 			);
 			name = "toDoList--2023";
 			packageProductDependencies = (
-				CA19BA402A4E41D80092469A /* CocoaLumberjackSwift */,
-				CACD94A12A4F75E000DAB123 /* Models */,
 			);
 			productName = "toDoList--2023";
 			productReference = CA680E842A34B02B00B478CA /* toDoList--2023.app */;
@@ -366,8 +394,6 @@
 			);
 			mainGroup = CA680E7B2A34B02B00B478CA;
 			packageReferences = (
-				CA19BA3B2A4DE4D20092469A /* XCRemoteSwiftPackageReference "CocoaLumberjack" */,
-				CACD94A02A4F75E000DAB123 /* XCRemoteSwiftPackageReference "Models" */,
 			);
 			productRefGroup = CA680E852A34B02B00B478CA /* Products */;
 			projectDirPath = "";
@@ -499,20 +525,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CACD94AB2A56B74600DAB123 /* ItemsDTO.swift in Sources */,
 				CA680E8C2A34B02B00B478CA /* TodoItemViewController.swift in Sources */,
 				CA6D39102A49D1D500B11DD9 /* MainView.swift in Sources */,
 				CA680E882A34B02B00B478CA /* AppDelegate.swift in Sources */,
 				CA5C29EB2A40EF4F0045FB2C /* FileCacheErrors.swift in Sources */,
 				CACD97F92A4232A100BB6D7E /* Notification.swift in Sources */,
+				CACD94B02A56FA2400DAB123 /* ItemDTO.swift in Sources */,
 				CA19BA452A4ED5B40092469A /* TransitioninDelegate.swift in Sources */,
 				CA6D39122A49D21400B11DD9 /* CompleteBarView.swift in Sources */,
 				CA5C29EE2A419E500045FB2C /* MainViewController.swift in Sources */,
 				CACD98012A44842500BB6D7E /* CustomColorPickerViewController.swift in Sources */,
 				CACD97FF2A4482A600BB6D7E /* ColorPalletView.swift in Sources */,
+				CACD94A42A540ABB00DAB123 /* URLSession.swift in Sources */,
+				CACD94A92A5465E200DAB123 /* DefaultNetworkingService.swift in Sources */,
 				CACD98032A44FAA400BB6D7E /* UIColor.swift in Sources */,
+				CACD94AE2A56D07300DAB123 /* ToDoItemDTO.swift in Sources */,
 				CA6D39162A4B0FF100B11DD9 /* UILabel.swift in Sources */,
 				CA6D39142A4A1FE500B11DD9 /* ItemTableViewCell.swift in Sources */,
 				CA680EB92A34B08600B478CA /* ToDoItem.swift in Sources */,
+				CACD94A72A5462F500DAB123 /* NetworkingService.swift in Sources */,
 				CA4264372A385BB7000631EE /* FileCache.swift in Sources */,
 				CA19BA472A4ED8E00092469A /* TransitionAnimation.swift in Sources */,
 				CA19BA3A2A4DBE1A0092469A /* CustomTableView.swift in Sources */,
@@ -866,38 +898,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		CA19BA3B2A4DE4D20092469A /* XCRemoteSwiftPackageReference "CocoaLumberjack" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/CocoaLumberjack/CocoaLumberjack";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-		CACD94A02A4F75E000DAB123 /* XCRemoteSwiftPackageReference "Models" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/timllin/Models";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		CA19BA402A4E41D80092469A /* CocoaLumberjackSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CA19BA3B2A4DE4D20092469A /* XCRemoteSwiftPackageReference "CocoaLumberjack" */;
-			productName = CocoaLumberjackSwift;
-		};
-		CACD94A12A4F75E000DAB123 /* Models */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CACD94A02A4F75E000DAB123 /* XCRemoteSwiftPackageReference "Models" */;
-			productName = Models;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CA680E7C2A34B02B00B478CA /* Project object */;
 }

@@ -217,3 +217,32 @@ extension TodoItem{
 
 }
 
+extension TodoItem {
+    public static func parse(todoItemDTO: TodoItemDTO) -> TodoItem {
+        let id = todoItemDTO.id
+        let text = todoItemDTO.text
+        let importance = todoItemDTO.importance
+
+        var deadlineTimeStamp: Double? = nil
+        if let timestamp = todoItemDTO.deadline {
+            deadlineTimeStamp = Double(timestamp)
+        }
+
+        let deadline = deadlineTimeStamp.map {Date(timeIntervalSince1970: $0)}
+        let flag = todoItemDTO.flag
+        let creationDate = Date(timeIntervalSince1970: Double(todoItemDTO.creationDate))
+        let changeDate = Date(timeIntervalSince1970: Double(todoItemDTO.changeDate))
+        let hexCode = todoItemDTO.hexCode
+
+        let toDoItem = TodoItem(id: id,
+                                text: text,
+                                importanceType: importance,
+                                deadline: deadline,
+                                flag: flag,
+                                creationDate: creationDate,
+                                changeDate: changeDate,
+                                hexCode: hexCode)
+        return toDoItem
+    }
+}
+

@@ -99,3 +99,15 @@ extension FileCache{
         }
     }
 }
+
+extension FileCache {
+    public func deleteAllItems() {
+        toDoItemDict.removeAll()
+    }
+
+    public func updateAllItems(with items: [TodoItem]){
+        for item in items{
+            toDoItemDict[item.getId()] = item
+        }
+    }
+}
