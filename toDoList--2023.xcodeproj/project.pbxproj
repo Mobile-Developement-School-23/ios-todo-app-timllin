@@ -40,6 +40,14 @@
 		CACD97FF2A4482A600BB6D7E /* ColorPalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD97FE2A4482A600BB6D7E /* ColorPalletView.swift */; };
 		CACD98012A44842500BB6D7E /* CustomColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD98002A44842500BB6D7E /* CustomColorPickerViewController.swift */; };
 		CACD98032A44FAA400BB6D7E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD98022A44FAA400BB6D7E /* UIColor.swift */; };
+		CADEC5512A5ED3480076267D /* SQLDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADEC5502A5ED3480076267D /* SQLDataStorage.swift */; };
+		CADEC5542A5ED4B80076267D /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = CADEC5532A5ED4B80076267D /* SQLite */; };
+		CADEC5562A5ED9070076267D /* ToDoItem+SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADEC5552A5ED9070076267D /* ToDoItem+SQLite.swift */; };
+		CADEC5582A5EE40B0076267D /* FileCache+SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADEC5572A5EE40B0076267D /* FileCache+SQLite.swift */; };
+		CADEC55E2A6037090076267D /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADEC55D2A6037090076267D /* CoreDataStorage.swift */; };
+		CADEC5612A60430C0076267D /* CoreDataDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CADEC55F2A60430C0076267D /* CoreDataDatabase.xcdatamodeld */; };
+		CADEC5632A6046990076267D /* FileCache+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADEC5622A6046990076267D /* FileCache+CoreData.swift */; };
+		CADEC5652A6070B40076267D /* ToDoItem+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADEC5642A6070B40076267D /* ToDoItem+CoreData.swift */; };
 		E8209C964C429636DA3D25D1 /* Pods_toDoList__2023.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD321EE663BFA5FDECAA553 /* Pods_toDoList__2023.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +111,13 @@
 		CACD97FE2A4482A600BB6D7E /* ColorPalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalletView.swift; sourceTree = "<group>"; };
 		CACD98002A44842500BB6D7E /* CustomColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorPickerViewController.swift; sourceTree = "<group>"; };
 		CACD98022A44FAA400BB6D7E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		CADEC5502A5ED3480076267D /* SQLDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLDataStorage.swift; sourceTree = "<group>"; };
+		CADEC5552A5ED9070076267D /* ToDoItem+SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoItem+SQLite.swift"; sourceTree = "<group>"; };
+		CADEC5572A5EE40B0076267D /* FileCache+SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileCache+SQLite.swift"; sourceTree = "<group>"; };
+		CADEC55D2A6037090076267D /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		CADEC5602A60430C0076267D /* CoreDataDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDatabase.xcdatamodel; sourceTree = "<group>"; };
+		CADEC5622A6046990076267D /* FileCache+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileCache+CoreData.swift"; sourceTree = "<group>"; };
+		CADEC5642A6070B40076267D /* ToDoItem+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoItem+CoreData.swift"; sourceTree = "<group>"; };
 		D5946974E6D3736E0A184D25 /* Pods-toDoList--2023-toDoList--2023UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toDoList--2023-toDoList--2023UITests.release.xcconfig"; path = "Target Support Files/Pods-toDoList--2023-toDoList--2023UITests/Pods-toDoList--2023-toDoList--2023UITests.release.xcconfig"; sourceTree = "<group>"; };
 		FCD321EE663BFA5FDECAA553 /* Pods_toDoList__2023.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toDoList__2023.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD078482A99BB04A32EE911 /* Pods-toDoList--2023.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toDoList--2023.release.xcconfig"; path = "Target Support Files/Pods-toDoList--2023/Pods-toDoList--2023.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CADEC5542A5ED4B80076267D /* SQLite in Frameworks */,
 				E8209C964C429636DA3D25D1 /* Pods_toDoList__2023.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +230,7 @@
 		CA680E862A34B02B00B478CA /* toDoList--2023 */ = {
 			isa = PBXGroup;
 			children = (
+				CADEC55F2A60430C0076267D /* CoreDataDatabase.xcdatamodeld */,
 				CA19BA3D2A4E403B0092469A /* Utilities */,
 				CACD98062A45190200BB6D7E /* View */,
 				CACD97F72A42324600BB6D7E /* Extension */,
@@ -259,9 +276,8 @@
 		CACD94A52A5462DC00DAB123 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CACD94A62A5462F500DAB123 /* NetworkingService.swift */,
-				CACD94A82A5465E200DAB123 /* DefaultNetworkingService.swift */,
-				CACD94AC2A56D02F00DAB123 /* DTO */,
+				CADEC54E2A5ED2E40076267D /* Persistence */,
+				CADEC54D2A5ED2CD0076267D /* Network */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -299,6 +315,45 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		CADEC54D2A5ED2CD0076267D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CACD94A62A5462F500DAB123 /* NetworkingService.swift */,
+				CACD94A82A5465E200DAB123 /* DefaultNetworkingService.swift */,
+				CACD94AC2A56D02F00DAB123 /* DTO */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CADEC54E2A5ED2E40076267D /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				CADEC5592A5F20230076267D /* CoreData */,
+				CADEC54F2A5ED2F70076267D /* SQLite */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		CADEC54F2A5ED2F70076267D /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				CADEC5502A5ED3480076267D /* SQLDataStorage.swift */,
+				CADEC5572A5EE40B0076267D /* FileCache+SQLite.swift */,
+				CADEC5552A5ED9070076267D /* ToDoItem+SQLite.swift */,
+			);
+			path = SQLite;
+			sourceTree = "<group>";
+		};
+		CADEC5592A5F20230076267D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CADEC55D2A6037090076267D /* CoreDataStorage.swift */,
+				CADEC5622A6046990076267D /* FileCache+CoreData.swift */,
+				CADEC5642A6070B40076267D /* ToDoItem+CoreData.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -318,6 +373,7 @@
 			);
 			name = "toDoList--2023";
 			packageProductDependencies = (
+				CADEC5532A5ED4B80076267D /* SQLite */,
 			);
 			productName = "toDoList--2023";
 			productReference = CA680E842A34B02B00B478CA /* toDoList--2023.app */;
@@ -394,6 +450,7 @@
 			);
 			mainGroup = CA680E7B2A34B02B00B478CA;
 			packageReferences = (
+				CADEC5522A5ED4B80076267D /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 			);
 			productRefGroup = CA680E852A34B02B00B478CA /* Products */;
 			projectDirPath = "";
@@ -526,21 +583,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				CACD94AB2A56B74600DAB123 /* ItemsDTO.swift in Sources */,
+				CADEC5582A5EE40B0076267D /* FileCache+SQLite.swift in Sources */,
 				CA680E8C2A34B02B00B478CA /* TodoItemViewController.swift in Sources */,
 				CA6D39102A49D1D500B11DD9 /* MainView.swift in Sources */,
 				CA680E882A34B02B00B478CA /* AppDelegate.swift in Sources */,
 				CA5C29EB2A40EF4F0045FB2C /* FileCacheErrors.swift in Sources */,
+				CADEC55E2A6037090076267D /* CoreDataStorage.swift in Sources */,
 				CACD97F92A4232A100BB6D7E /* Notification.swift in Sources */,
 				CACD94B02A56FA2400DAB123 /* ItemDTO.swift in Sources */,
 				CA19BA452A4ED5B40092469A /* TransitioninDelegate.swift in Sources */,
 				CA6D39122A49D21400B11DD9 /* CompleteBarView.swift in Sources */,
 				CA5C29EE2A419E500045FB2C /* MainViewController.swift in Sources */,
 				CACD98012A44842500BB6D7E /* CustomColorPickerViewController.swift in Sources */,
+				CADEC5632A6046990076267D /* FileCache+CoreData.swift in Sources */,
 				CACD97FF2A4482A600BB6D7E /* ColorPalletView.swift in Sources */,
 				CACD94A42A540ABB00DAB123 /* URLSession.swift in Sources */,
 				CACD94A92A5465E200DAB123 /* DefaultNetworkingService.swift in Sources */,
+				CADEC5512A5ED3480076267D /* SQLDataStorage.swift in Sources */,
 				CACD98032A44FAA400BB6D7E /* UIColor.swift in Sources */,
+				CADEC5612A60430C0076267D /* CoreDataDatabase.xcdatamodeld in Sources */,
 				CACD94AE2A56D07300DAB123 /* ToDoItemDTO.swift in Sources */,
+				CADEC5652A6070B40076267D /* ToDoItem+CoreData.swift in Sources */,
 				CA6D39162A4B0FF100B11DD9 /* UILabel.swift in Sources */,
 				CA6D39142A4A1FE500B11DD9 /* ItemTableViewCell.swift in Sources */,
 				CA680EB92A34B08600B478CA /* ToDoItem.swift in Sources */,
@@ -548,6 +611,7 @@
 				CA4264372A385BB7000631EE /* FileCache.swift in Sources */,
 				CA19BA472A4ED8E00092469A /* TransitionAnimation.swift in Sources */,
 				CA19BA3A2A4DBE1A0092469A /* CustomTableView.swift in Sources */,
+				CADEC5562A5ED9070076267D /* ToDoItem+SQLite.swift in Sources */,
 				CA680E8A2A34B02B00B478CA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -898,6 +962,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CADEC5522A5ED4B80076267D /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CADEC5532A5ED4B80076267D /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CADEC5522A5ED4B80076267D /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		CADEC55F2A60430C0076267D /* CoreDataDatabase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CADEC5602A60430C0076267D /* CoreDataDatabase.xcdatamodel */,
+			);
+			currentVersion = CADEC5602A60430C0076267D /* CoreDataDatabase.xcdatamodel */;
+			path = CoreDataDatabase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CA680E7C2A34B02B00B478CA /* Project object */;
 }
