@@ -10,6 +10,8 @@ import UIKit
 class MainViewController: UIViewController {
     private lazy var fileCache = FileCache()
     private lazy var networkWorker = DefaultNetworkingService()
+    //private lazy var sqlDatabase = SQLDataStorage()
+
     private var currentCell: ItemTableViewCell?
     private let transitionDelegate: UIViewControllerTransitioningDelegate = TransitioninDelegate()
     private var keys: [String] {
@@ -116,7 +118,8 @@ extension MainViewController {
     }
 
     private func loadData() {
-        fileCache.loadJSON(fileName: "testApp.json")
+        fileCache.loadSQL()
+        // fileCache.loadCoreData()
         completeBar.label.text = "Выполнено - \(String(describing: countDoneItems()))"
     }
 }
@@ -270,12 +273,18 @@ extension MainViewController {
               let item = userInfo["item"] as? TodoItem else { return }
         if operationFlag == "add"{
             fileCache.add(item: item)
+            fileCache.insertUpdateSQL(item: item)
+            // fileCache.insertCoreData(item: item)
             postItemNetwork(with: item)
         } else if operationFlag == "change"{
             fileCache.add(item: item)
+            fileCache.insertUpdateSQL(item: item)
+            // fileCache.updateCoreData(item: item)
             putItemNetwork(with: item)
         } else if operationFlag == "delete" {
             fileCache.delete(item: item)
+            fileCache.deleteSQL(item: item)
+            // fileCache.deleteCoreData(item: item)
             deleteItemNetwork(with: item)
         }
         tableView.reloadData()
@@ -308,6 +317,8 @@ extension MainViewController {
                                              changeDate: item.getChangeDate(),
                                              hexCode: item.getHexCode())
             fileCache.add(item: newItem)
+            fileCache.insertUpdateSQL(item: newItem)
+            // fileCache.updateCoreData(item: newItem)
             putItemNetwork(with: newItem)
             tableView.reloadData()
             reloadAndUpdateData()
@@ -323,6 +334,8 @@ extension MainViewController {
         }
         if let item = fileCache.toDoItemDict[currentKeys[indexPath.row]] {
             fileCache.delete(item: item)
+            fileCache.deleteSQL(item: item)
+            // fileCache.deleteCoreData(item: item)
             deleteItemNetwork(with: item)
             tableView.reloadData()
             reloadAndUpdateData()
@@ -331,7 +344,6 @@ extension MainViewController {
 
     private func reloadAndUpdateData() {
         completeBar.label.text = "Выполнено - \(String(describing: countDoneItems()))"
-        fileCache.saveJSON(fileName: "testApp.json")
     }
 
     private func keysToIndexPath(of keys: [String]) -> [IndexPath] {
@@ -350,6 +362,8 @@ extension MainViewController {
             let items = try await networkWorker.getDataFromServer()
             fileCache.deleteAllItems()
             fileCache.updateAllItems(with: items)
+            fileCache.insertManySQL(items: items)
+            // fileCache.insertManyCoreData(items: items)
             reloadAndUpdateData()
             tableView.reloadData()
         }
@@ -357,9 +371,11 @@ extension MainViewController {
 
     private func patchDataNetwork(with items: [TodoItem]) {
         Task {
-            let items = try await networkWorker.updateDataOnServer(items: items)
+            let newiItems = try await networkWorker.updateDataOnServer(items: items)
             fileCache.deleteAllItems()
-            fileCache.updateAllItems(with: items)
+            fileCache.updateAllItems(with: newiItems)
+            fileCache.insertManySQL(items: newiItems)
+            // fileCache.insertManyCoreData(items: newiItems)
         }
     }
 
@@ -394,6 +410,5 @@ extension MainViewController {
         patchDataNetwork(with: fileCache.toDoItemDict.map { $0.value })
         networkWorker.setIsDirty(false)
         reloadAndUpdateData()
-
     }
 }
