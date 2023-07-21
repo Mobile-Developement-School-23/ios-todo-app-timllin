@@ -24,11 +24,14 @@
 		CA680E9F2A34B02F00B478CA /* toDoList__2023Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA680E9E2A34B02F00B478CA /* toDoList__2023Tests.swift */; };
 		CA680EA92A34B02F00B478CA /* toDoList__2023UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA680EA82A34B02F00B478CA /* toDoList__2023UITests.swift */; };
 		CA680EAB2A34B02F00B478CA /* toDoList__2023UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA680EAA2A34B02F00B478CA /* toDoList__2023UITestsLaunchTests.swift */; };
-		CA680EB92A34B08600B478CA /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA680EB82A34B08600B478CA /* ToDoItem.swift */; };
 		CA6D39102A49D1D500B11DD9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6D390F2A49D1D500B11DD9 /* MainView.swift */; };
 		CA6D39122A49D21400B11DD9 /* CompleteBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6D39112A49D21400B11DD9 /* CompleteBarView.swift */; };
 		CA6D39142A4A1FE500B11DD9 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6D39132A4A1FE500B11DD9 /* ItemTableViewCell.swift */; };
 		CA6D39162A4B0FF100B11DD9 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6D39152A4B0FF100B11DD9 /* UILabel.swift */; };
+		CAB7B9C12A69821D00D39BBA /* Mock Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB7B9C02A69821D00D39BBA /* Mock Data.swift */; };
+		CAB7B9C22A69854000D39BBA /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA680EB82A34B08600B478CA /* ToDoItem.swift */; };
+		CAB7B9C42A69855600D39BBA /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB7B9C32A69855600D39BBA /* ToDoItem.swift */; };
+		CABD9C5A2A69F86E006F1DF2 /* ToDoItemDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABD9C592A69F86E006F1DF2 /* ToDoItemDetailedView.swift */; };
 		CACD94A42A540ABB00DAB123 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD94A32A540ABB00DAB123 /* URLSession.swift */; };
 		CACD94A72A5462F500DAB123 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD94A62A5462F500DAB123 /* NetworkingService.swift */; };
 		CACD94A92A5465E200DAB123 /* DefaultNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD94A82A5465E200DAB123 /* DefaultNetworkingService.swift */; };
@@ -48,6 +51,15 @@
 		CADEC5612A60430C0076267D /* CoreDataDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CADEC55F2A60430C0076267D /* CoreDataDatabase.xcdatamodeld */; };
 		CADEC5632A6046990076267D /* FileCache+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADEC5622A6046990076267D /* FileCache+CoreData.swift */; };
 		CADEC5652A6070B40076267D /* ToDoItem+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADEC5642A6070B40076267D /* ToDoItem+CoreData.swift */; };
+		CADEC56D2A6927800076267D /* toDoList__2023_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADEC56C2A6927800076267D /* toDoList__2023_SwiftUIApp.swift */; };
+		CADEC56F2A6927800076267D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADEC56E2A6927800076267D /* ContentView.swift */; };
+		CADEC5712A6927830076267D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CADEC5702A6927830076267D /* Assets.xcassets */; };
+		CADEC5742A6927830076267D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CADEC5732A6927830076267D /* Preview Assets.xcassets */; };
+		CADEC57E2A6927840076267D /* toDoList__2023_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADEC57D2A6927840076267D /* toDoList__2023_SwiftUITests.swift */; };
+		CADEC5882A6927840076267D /* toDoList__2023_SwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADEC5872A6927840076267D /* toDoList__2023_SwiftUIUITests.swift */; };
+		CADEC58A2A6927840076267D /* toDoList__2023_SwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADEC5892A6927840076267D /* toDoList__2023_SwiftUIUITestsLaunchTests.swift */; };
+		CADEC59A2A692F3D0076267D /* ToDoItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD94AD2A56D07300DAB123 /* ToDoItemDTO.swift */; };
+		CADEC59B2A69310C0076267D /* ToDoItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADEC5942A692A190076267D /* ToDoItemCellView.swift */; };
 		E8209C964C429636DA3D25D1 /* Pods_toDoList__2023.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD321EE663BFA5FDECAA553 /* Pods_toDoList__2023.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +77,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = CA680E832A34B02B00B478CA;
 			remoteInfo = "toDoList--2023";
+		};
+		CADEC57A2A6927840076267D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA680E7C2A34B02B00B478CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CADEC5692A6927800076267D;
+			remoteInfo = "toDoList--2023-SwiftUI";
+		};
+		CADEC5842A6927840076267D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA680E7C2A34B02B00B478CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CADEC5692A6927800076267D;
+			remoteInfo = "toDoList--2023-SwiftUI";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -100,6 +126,9 @@
 		CA6D39112A49D21400B11DD9 /* CompleteBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteBarView.swift; sourceTree = "<group>"; };
 		CA6D39132A4A1FE500B11DD9 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		CA6D39152A4B0FF100B11DD9 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		CAB7B9C02A69821D00D39BBA /* Mock Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mock Data.swift"; sourceTree = "<group>"; };
+		CAB7B9C32A69855600D39BBA /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		CABD9C592A69F86E006F1DF2 /* ToDoItemDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemDetailedView.swift; sourceTree = "<group>"; };
 		CACD94A32A540ABB00DAB123 /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
 		CACD94A62A5462F500DAB123 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		CACD94A82A5465E200DAB123 /* DefaultNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkingService.swift; sourceTree = "<group>"; };
@@ -118,6 +147,17 @@
 		CADEC5602A60430C0076267D /* CoreDataDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDatabase.xcdatamodel; sourceTree = "<group>"; };
 		CADEC5622A6046990076267D /* FileCache+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileCache+CoreData.swift"; sourceTree = "<group>"; };
 		CADEC5642A6070B40076267D /* ToDoItem+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoItem+CoreData.swift"; sourceTree = "<group>"; };
+		CADEC56A2A6927800076267D /* toDoList--2023-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "toDoList--2023-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CADEC56C2A6927800076267D /* toDoList__2023_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoList__2023_SwiftUIApp.swift; sourceTree = "<group>"; };
+		CADEC56E2A6927800076267D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CADEC5702A6927830076267D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CADEC5732A6927830076267D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CADEC5792A6927840076267D /* toDoList--2023-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "toDoList--2023-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CADEC57D2A6927840076267D /* toDoList__2023_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoList__2023_SwiftUITests.swift; sourceTree = "<group>"; };
+		CADEC5832A6927840076267D /* toDoList--2023-SwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "toDoList--2023-SwiftUIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CADEC5872A6927840076267D /* toDoList__2023_SwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoList__2023_SwiftUIUITests.swift; sourceTree = "<group>"; };
+		CADEC5892A6927840076267D /* toDoList__2023_SwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoList__2023_SwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CADEC5942A692A190076267D /* ToDoItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemCellView.swift; sourceTree = "<group>"; };
 		D5946974E6D3736E0A184D25 /* Pods-toDoList--2023-toDoList--2023UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toDoList--2023-toDoList--2023UITests.release.xcconfig"; path = "Target Support Files/Pods-toDoList--2023-toDoList--2023UITests/Pods-toDoList--2023-toDoList--2023UITests.release.xcconfig"; sourceTree = "<group>"; };
 		FCD321EE663BFA5FDECAA553 /* Pods_toDoList__2023.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toDoList__2023.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD078482A99BB04A32EE911 /* Pods-toDoList--2023.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toDoList--2023.release.xcconfig"; path = "Target Support Files/Pods-toDoList--2023/Pods-toDoList--2023.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +186,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				4652726E15D1EC07CC58D63A /* Pods_toDoList__2023_toDoList__2023UITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CADEC5672A6927800076267D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CADEC5762A6927840076267D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CADEC5802A6927840076267D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +272,9 @@
 				CA680E862A34B02B00B478CA /* toDoList--2023 */,
 				CA680E9D2A34B02F00B478CA /* toDoList--2023Tests */,
 				CA680EA72A34B02F00B478CA /* toDoList--2023UITests */,
+				CADEC56B2A6927800076267D /* toDoList--2023-SwiftUI */,
+				CADEC57C2A6927840076267D /* toDoList--2023-SwiftUITests */,
+				CADEC5862A6927840076267D /* toDoList--2023-SwiftUIUITests */,
 				CA680E852A34B02B00B478CA /* Products */,
 				641B72ADBBC525146D317233 /* Pods */,
 				5A53473B910E27B255E90369 /* Frameworks */,
@@ -223,6 +287,9 @@
 				CA680E842A34B02B00B478CA /* toDoList--2023.app */,
 				CA680E9A2A34B02F00B478CA /* toDoList--2023Tests.xctest */,
 				CA680EA42A34B02F00B478CA /* toDoList--2023UITests.xctest */,
+				CADEC56A2A6927800076267D /* toDoList--2023-SwiftUI.app */,
+				CADEC5792A6927840076267D /* toDoList--2023-SwiftUITests.xctest */,
+				CADEC5832A6927840076267D /* toDoList--2023-SwiftUIUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -354,6 +421,46 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		CADEC56B2A6927800076267D /* toDoList--2023-SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				CADEC56C2A6927800076267D /* toDoList__2023_SwiftUIApp.swift */,
+				CADEC56E2A6927800076267D /* ContentView.swift */,
+				CAB7B9C32A69855600D39BBA /* ToDoItem.swift */,
+				CABD9C592A69F86E006F1DF2 /* ToDoItemDetailedView.swift */,
+				CADEC5942A692A190076267D /* ToDoItemCellView.swift */,
+				CAB7B9C02A69821D00D39BBA /* Mock Data.swift */,
+				CADEC5702A6927830076267D /* Assets.xcassets */,
+				CADEC5722A6927830076267D /* Preview Content */,
+			);
+			path = "toDoList--2023-SwiftUI";
+			sourceTree = "<group>";
+		};
+		CADEC5722A6927830076267D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CADEC5732A6927830076267D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CADEC57C2A6927840076267D /* toDoList--2023-SwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CADEC57D2A6927840076267D /* toDoList__2023_SwiftUITests.swift */,
+			);
+			path = "toDoList--2023-SwiftUITests";
+			sourceTree = "<group>";
+		};
+		CADEC5862A6927840076267D /* toDoList--2023-SwiftUIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CADEC5872A6927840076267D /* toDoList__2023_SwiftUIUITests.swift */,
+				CADEC5892A6927840076267D /* toDoList__2023_SwiftUIUITestsLaunchTests.swift */,
+			);
+			path = "toDoList--2023-SwiftUIUITests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -417,6 +524,59 @@
 			productReference = CA680EA42A34B02F00B478CA /* toDoList--2023UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		CADEC5692A6927800076267D /* toDoList--2023-SwiftUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CADEC58B2A6927840076267D /* Build configuration list for PBXNativeTarget "toDoList--2023-SwiftUI" */;
+			buildPhases = (
+				CADEC5662A6927800076267D /* Sources */,
+				CADEC5672A6927800076267D /* Frameworks */,
+				CADEC5682A6927800076267D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "toDoList--2023-SwiftUI";
+			productName = "toDoList--2023-SwiftUI";
+			productReference = CADEC56A2A6927800076267D /* toDoList--2023-SwiftUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CADEC5782A6927840076267D /* toDoList--2023-SwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CADEC58E2A6927840076267D /* Build configuration list for PBXNativeTarget "toDoList--2023-SwiftUITests" */;
+			buildPhases = (
+				CADEC5752A6927840076267D /* Sources */,
+				CADEC5762A6927840076267D /* Frameworks */,
+				CADEC5772A6927840076267D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CADEC57B2A6927840076267D /* PBXTargetDependency */,
+			);
+			name = "toDoList--2023-SwiftUITests";
+			productName = "toDoList--2023-SwiftUITests";
+			productReference = CADEC5792A6927840076267D /* toDoList--2023-SwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CADEC5822A6927840076267D /* toDoList--2023-SwiftUIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CADEC5912A6927840076267D /* Build configuration list for PBXNativeTarget "toDoList--2023-SwiftUIUITests" */;
+			buildPhases = (
+				CADEC57F2A6927840076267D /* Sources */,
+				CADEC5802A6927840076267D /* Frameworks */,
+				CADEC5812A6927840076267D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CADEC5852A6927840076267D /* PBXTargetDependency */,
+			);
+			name = "toDoList--2023-SwiftUIUITests";
+			productName = "toDoList--2023-SwiftUIUITests";
+			productReference = CADEC5832A6927840076267D /* toDoList--2023-SwiftUIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -437,6 +597,17 @@
 					CA680EA32A34B02F00B478CA = {
 						CreatedOnToolsVersion = 14.3;
 						TestTargetID = CA680E832A34B02B00B478CA;
+					};
+					CADEC5692A6927800076267D = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					CADEC5782A6927840076267D = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = CADEC5692A6927800076267D;
+					};
+					CADEC5822A6927840076267D = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = CADEC5692A6927800076267D;
 					};
 				};
 			};
@@ -459,6 +630,9 @@
 				CA680E832A34B02B00B478CA /* toDoList--2023 */,
 				CA680E992A34B02F00B478CA /* toDoList--2023Tests */,
 				CA680EA32A34B02F00B478CA /* toDoList--2023UITests */,
+				CADEC5692A6927800076267D /* toDoList--2023-SwiftUI */,
+				CADEC5782A6927840076267D /* toDoList--2023-SwiftUITests */,
+				CADEC5822A6927840076267D /* toDoList--2023-SwiftUIUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -483,6 +657,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CA680EA22A34B02F00B478CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CADEC5682A6927800076267D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CADEC5742A6927830076267D /* Preview Assets.xcassets in Resources */,
+				CADEC5712A6927830076267D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CADEC5772A6927840076267D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CADEC5812A6927840076267D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -595,6 +792,7 @@
 				CA6D39122A49D21400B11DD9 /* CompleteBarView.swift in Sources */,
 				CA5C29EE2A419E500045FB2C /* MainViewController.swift in Sources */,
 				CACD98012A44842500BB6D7E /* CustomColorPickerViewController.swift in Sources */,
+				CAB7B9C22A69854000D39BBA /* ToDoItem.swift in Sources */,
 				CADEC5632A6046990076267D /* FileCache+CoreData.swift in Sources */,
 				CACD97FF2A4482A600BB6D7E /* ColorPalletView.swift in Sources */,
 				CACD94A42A540ABB00DAB123 /* URLSession.swift in Sources */,
@@ -606,7 +804,6 @@
 				CADEC5652A6070B40076267D /* ToDoItem+CoreData.swift in Sources */,
 				CA6D39162A4B0FF100B11DD9 /* UILabel.swift in Sources */,
 				CA6D39142A4A1FE500B11DD9 /* ItemTableViewCell.swift in Sources */,
-				CA680EB92A34B08600B478CA /* ToDoItem.swift in Sources */,
 				CACD94A72A5462F500DAB123 /* NetworkingService.swift in Sources */,
 				CA4264372A385BB7000631EE /* FileCache.swift in Sources */,
 				CA19BA472A4ED8E00092469A /* TransitionAnimation.swift in Sources */,
@@ -633,6 +830,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CADEC5662A6927800076267D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAB7B9C12A69821D00D39BBA /* Mock Data.swift in Sources */,
+				CADEC59A2A692F3D0076267D /* ToDoItemDTO.swift in Sources */,
+				CAB7B9C42A69855600D39BBA /* ToDoItem.swift in Sources */,
+				CADEC59B2A69310C0076267D /* ToDoItemCellView.swift in Sources */,
+				CABD9C5A2A69F86E006F1DF2 /* ToDoItemDetailedView.swift in Sources */,
+				CADEC56F2A6927800076267D /* ContentView.swift in Sources */,
+				CADEC56D2A6927800076267D /* toDoList__2023_SwiftUIApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CADEC5752A6927840076267D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CADEC57E2A6927840076267D /* toDoList__2023_SwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CADEC57F2A6927840076267D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CADEC5882A6927840076267D /* toDoList__2023_SwiftUIUITests.swift in Sources */,
+				CADEC58A2A6927840076267D /* toDoList__2023_SwiftUIUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -645,6 +873,16 @@
 			isa = PBXTargetDependency;
 			target = CA680E832A34B02B00B478CA /* toDoList--2023 */;
 			targetProxy = CA680EA52A34B02F00B478CA /* PBXContainerItemProxy */;
+		};
+		CADEC57B2A6927840076267D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CADEC5692A6927800076267D /* toDoList--2023-SwiftUI */;
+			targetProxy = CADEC57A2A6927840076267D /* PBXContainerItemProxy */;
+		};
+		CADEC5852A6927840076267D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CADEC5692A6927800076267D /* toDoList--2023-SwiftUI */;
+			targetProxy = CADEC5842A6927840076267D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -922,6 +1160,144 @@
 			};
 			name = Release;
 		};
+		CADEC58C2A6927840076267D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"toDoList--2023-SwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 2AFG9UBT5A;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xd.toDoList--2023-SwiftUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CADEC58D2A6927840076267D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"toDoList--2023-SwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 2AFG9UBT5A;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xd.toDoList--2023-SwiftUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CADEC58F2A6927840076267D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2AFG9UBT5A;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xd.toDoList--2023-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/toDoList--2023-SwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/toDoList--2023-SwiftUI";
+			};
+			name = Debug;
+		};
+		CADEC5902A6927840076267D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2AFG9UBT5A;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xd.toDoList--2023-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/toDoList--2023-SwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/toDoList--2023-SwiftUI";
+			};
+			name = Release;
+		};
+		CADEC5922A6927840076267D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2AFG9UBT5A;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xd.toDoList--2023-SwiftUIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "toDoList--2023-SwiftUI";
+			};
+			name = Debug;
+		};
+		CADEC5932A6927840076267D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2AFG9UBT5A;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "xd.toDoList--2023-SwiftUIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "toDoList--2023-SwiftUI";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -957,6 +1333,33 @@
 			buildConfigurations = (
 				CA680EB52A34B02F00B478CA /* Debug */,
 				CA680EB62A34B02F00B478CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CADEC58B2A6927840076267D /* Build configuration list for PBXNativeTarget "toDoList--2023-SwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CADEC58C2A6927840076267D /* Debug */,
+				CADEC58D2A6927840076267D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CADEC58E2A6927840076267D /* Build configuration list for PBXNativeTarget "toDoList--2023-SwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CADEC58F2A6927840076267D /* Debug */,
+				CADEC5902A6927840076267D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CADEC5912A6927840076267D /* Build configuration list for PBXNativeTarget "toDoList--2023-SwiftUIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CADEC5922A6927840076267D /* Debug */,
+				CADEC5932A6927840076267D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
